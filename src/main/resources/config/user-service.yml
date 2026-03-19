@@ -6,8 +6,14 @@ eureka:
         fetch-registry: true
 
 spring:
-    cloud:
-        gateway:
-            discovery:
-                locator:
-                    enabled: true
+    datasource:
+        url: jdbc:mysql://localhost:3306/elibrary_users?createDatabaseIfNotExist=true
+        username: root
+        password: Ijse@123
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update # Automatically creates tables for you!
+        show-sql: true
+
+  
