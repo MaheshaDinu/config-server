@@ -11,19 +11,20 @@ spring:
             discovery:
                 locator:
                     enabled: true
+                    lower-case-service-id: true
                 
             routes:
                 - id: catalog-service
-                  uri: lb://CATALOG-SERVICE
+                  uri: lb://catalog-service
                   predicates:
                     - Path=/books/**
 
                 - id: user-service
-                  uri: lb://USER-SERVICE
+                  uri: lb://user-service
                   predicates:
                     - Path=/users/**
 
                 - id: media-service
-                  uri: lb://MEDIA-SERVICE
+                  uri: lb://media-service
                   predicates:
                     - Path=/media/**
