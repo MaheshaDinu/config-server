@@ -8,23 +8,23 @@ eureka:
 spring:
     cloud:
         gateway:
-            discovery:
-                locator:
-                    enabled: true
-                    lower-case-service-id: true
-                
-            routes:
-                - id: catalog-service
-                  uri: lb://catalog-service
-                  predicates:
-                    - Path=/books/**
+            server:
+                webflux:
+                    routes:
+                        - id: user-service
+                          uri: lb://USER-SERVICE
+                          predicates:
+                              - Path=/users/**
+                        
+                        - id: catalog-service
+                          uri: lb://CATALOG-SERVICE
+                          predicates:
+                              - Path=/books/**
+                        
+                        - id: media-service
+                          uri: lb://MEDIA-SERVICE
+                          predicates:
+                              - Path=/media/**
 
-                - id: user-service
-                  uri: lb://user-service
-                  predicates:
-                    - Path=/users/**
-
-                - id: media-service
-                  uri: lb://media-service
-                  predicates:
-                    - Path=/media/**
+server:
+    port: 8080
