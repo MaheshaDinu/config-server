@@ -2,17 +2,18 @@ server:
     port: 8888
 
 spring:
-    application:
-        name: config-server
-    profiles:
-        active: native
-    cloud:
-        config:
-            server:
-                native:
-                    search-locations: classpath:/config
+  application:
+    name: config-Server
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+  profiles:
+    active: native
+    
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+            - classpath:/configurations
+            - classpath:/configurations/platform
+            - classpath:/configurations/services

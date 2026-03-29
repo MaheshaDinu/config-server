@@ -25,6 +25,16 @@ spring:
                           uri: lb://MEDIA-SERVICE
                           predicates:
                               - Path=/media/**
+                    
+                    default-filters:
+                        - PreserveHostHeader
+
+                    globalcors:
+                        cors-configurations:
+                            '[/**]':
+                                allowedOrigins: "*"
+                                allowed-methods: "*"
+                                allowed-headers: "*"
 
 server:
     port: 8080
