@@ -19,3 +19,8 @@ spring:
             - classpath:/configurations
             - classpath:/configurations/platform
             - classpath:/configurations/services
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
