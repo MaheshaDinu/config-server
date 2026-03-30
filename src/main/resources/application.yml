@@ -5,8 +5,7 @@ spring:
   application:
     name: config-Server
 
-  profiles:
-    active: native
+
     
 
   cloud:
